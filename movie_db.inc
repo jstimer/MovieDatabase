@@ -25,7 +25,7 @@ session_start();
 	function HTMLHeader()
 	{
 		echo '<div class="header">';
-		echo "<h1>Movie Database Name</h1>\n";
+		echo "<h1>Movie Database (Name Pending)</h1>\n";
 		echo "<h3>Subtitle goes here</h3>\n";
 		echo "<div class=\"search\">\n";
 		echo "<input type=\"text\" name=\"search\" placeholder=\"Search...\">\n";
@@ -40,7 +40,6 @@ session_start();
 		echo "<li><a href=\"movies.php\">Movies</a></li>\n";
 		echo "<li><a href=\"about_us.php\">About Us</a></li>\n";
 		echo "<li><a href=\"contact_us.php\">Contact Us</a></li>\n";
-		echo "<li><a href=\"single.php\">Single</a></li>\n";
 		echo "</ul>\n";
 
 	}

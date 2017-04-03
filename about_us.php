@@ -11,9 +11,7 @@
 		<!-- webpage info should go here-->
 		<div class="body">
 			
-		</div>
-		
-		<a href="movies.php">link text<</a>
+		</div>	
 
 <?php	
 		HTMLFooter();

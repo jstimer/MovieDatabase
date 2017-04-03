@@ -96,12 +96,6 @@
 				<li><strong>Writers:</strong> Writer names</li>
 				<li><strong>Stars:</strong> Actor names</li>
 			</ul>
-		
-		
-		
-			<p>Pan's Labyrinth, originally known in Spanish as El Laberinto del Fauno (The Labyrinth of the Faun), </p>
-			<p>is a 2006 Spanish-Mexican dark fantasy film written and directed by Mexican filmmaker Guillermo del Toro.</p>
-			<p>It was produced and distributed by Esperanto Films.</p>
 			</div>
 			-->
 		
