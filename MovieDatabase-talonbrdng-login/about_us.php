@@ -13,7 +13,7 @@
 			
 		</div>
 		
-		<a href="movies.php">link text<</a>
+		<!--<a href="movies.php">link text<</a>-->
 
 <?php	
 		HTMLFooter();

@@ -26,7 +26,7 @@
 						echo "<h2>Database Error</h2>\n";
 						die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
 				}
-				//echo "Connection Successful";
+				echo "Connection Successful";
 				
 	// make a select statement to get data from the database
   

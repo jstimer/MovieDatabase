@@ -82,9 +82,13 @@ ul.menu li a.active {
 body
 {
 	margin: 0px 40px 0px 40px;
-	background-color:#404040 ;
+	\background-color:#404040 ;
 	min-width: 600px;
-	
+	background-image: url("images/film_roll.jpg"),  url("images/film_roll.jpg");
+	background-repeat: repeat-y;
+   background-position: left center, right center;
+   
+  
 }
 
 div.body
@@ -100,6 +104,7 @@ div.body
 	margin-bottom:0px;
 	padding: 5px 10px;
 	word-wrap:break-word;
+	
 	
 }
 
