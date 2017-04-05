@@ -1,0 +1,118 @@
+/* Style Sheet for the website */
+@import url(http://fonts.googleapis.com/css?family=Bungee+Inline);
+
+
+div.header
+{
+	
+	background-color:#2479c7;
+	border: 1px solid black;
+	min-width:600px;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	padding-left:20px;
+	
+
+}	 
+div.header h1
+{
+	font-family: 'Bungee Inline';
+	
+}
+div.header h3
+{
+	
+	font-family: 'Bungee Inline';  
+	\font-style:italic;
+}
+
+div.search
+{
+	text-align: right;
+	padding-bottom:10px;
+	padding-right: 50px;
+}
+
+.input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width */
+input[type=text]:focus {
+    width: 30%;
+}
+
+ul.menu
+{
+	width:1000px;
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	padding-top: 10px;
+	padding-bottom:7px; 
+	
+}
+ul.menu li
+{
+	
+	display:inline; /* displays the menu inline horiziontally*/
+}
+
+ul.menu li a
+{
+	background-color:black;
+	color:white;
+	padding: 10px 20px;
+	text-decoration: none;
+	
+}
+ul.menu li a:hover
+{
+	background-color:#2479c7; /* color of menu links when hovering over */
+}
+
+ul.menu li a.active {
+    background-color: #1a3854; /* Add a color to the "active/current" link */
+    color: white;
+}
+
+body
+{
+	margin: 0px 40px 0px 40px;
+	background-color:#404040 ;
+	min-width: 600px;
+	
+}
+
+div.body
+{
+	background-color:#FFFFFF;
+	border: 1px solid black;
+	text-align: left;
+	clear:both;
+	width:60%;
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	padding: 5px 10px;
+	word-wrap:break-word;
+	
+}
+
+div.footer
+{
+	background-color:black;
+	width:60%;
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	border:1px solid black;
+	color:white;
+	padding: 5px 10px;
+	
+}
