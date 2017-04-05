@@ -54,13 +54,14 @@
     	<form action="movie_submit.php" method="POST">
     		<br>
 			Film Name:
-			<input type="text" name="filmName" style="width: 65%" maxlength="100"><br><br>
+			<input type="text" name="filmName" style="width: 65%" maxlength="100" required="true"><br><br>
 			Release Date:
-			<input type="text" name="releaseDate" placeholder="YYYY-MM-DD" style="width: 21%" maxlength="10"><br><br>
+			<input type="text" name="releaseDate" placeholder="YYYY-MM-DD" style="width: 21%" maxlength="10" required="true"><br><br>
 			Runtime:
-			<input type="text" name="runtime" placeholder="in mins" style="width: 15%" maxlength="3"><br><br>
+			<input type="text" name="runtime" placeholder="in mins" style="width: 15%" maxlength="3" required="true"><br><br>
 			MPAA Rating:
-			<select name="rating">
+			<select name="rating" required>
+				<option selected=selected>Select...</option>
 				<option value="G">G</option>
 				<option value="PG">PG</option>
 				<option value="PG13">PG-13</option>
@@ -69,7 +70,8 @@
 				<option value="NR">NR</option>
 			</select><br><br>
 			Genre:
-			<select name="genre">
+			<select name="genre" required>
+				<option selected=selected>Select...</option>
 				<option value="1">Comedy</option>
 				<option value="2">Action</option>
 				<option value="3">Science Fiction</option>
@@ -82,7 +84,7 @@
 			</select>
 			<br><br>
 			Plot Summary:
-			<textarea name="summary" rows="4" cols="50" maxlength="1000"></textarea>
+			<textarea name="summary" rows="4" cols="50" maxlength="1000" required="true"></textarea>
 			<br><br>
 			
 			<input type="submit" name="submit" value="Submit">	
