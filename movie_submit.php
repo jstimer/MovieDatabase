@@ -1,5 +1,5 @@
 <?php
-	/*
+
 	$Server = "willy";
 	$UserName = "comp305_grp2";
 	$Password = "Scrumbags1!";
@@ -15,28 +15,30 @@
 		die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
 				}
 	//echo "Connection Successful";
-	*/
-
-	if (isset($_POST['Submit']) )
-{
-	$varMovie = $_POST['filmName'];
-	$movRelease = $_POST['releaseDate'];
-	$runningTime = $_POST['runtime'];
-	$mpaa = $_POST['rating'];
-	$synopsis = $_POST['summary'];
 	
-	$sql = "INSERT INTO Film VALUES (NULL, $varMovie, $movRelease, $runningTime, $mpaa, $synopsis)";
+	echo $_POST;
+	
+
+	if (isset($_POST['filmName']))
+	{
+		$varMovie = $_POST['filmName'];
+		$movRelease = $_POST['releaseDate'];
+		$runningTime = $_POST['runtime'];
+		$mpaa = $_POST['rating'];
+		$synopsis = $_POST['summary'];
+		$movGenre = $_POST['genre'];
+	
+		$sql = "INSERT INTO Film VALUES (NULL, '$varMovie', '$movRelease', $runningTime, '$mpaa', '$synopsis', '$movGenre')";
 
 
-	if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+		if ($Connection->query($sql) === TRUE) {
+   	 echo "New record created successfully";
+		} else {
+   	 echo "Error: " . $sql . "<br>" . $Connection->error;
+		}
+	}
 
-}
-
-$Connection->close();		
+	$Connection->close();		
 	
 ?>
 

@@ -51,7 +51,7 @@
     	<h2>Add Movie</h2>
   	</div>
   	<div class="modal-body">
-    	<form>
+    	<form action="movie_submit.php" method="POST">
     		<br>
 			Film Name:
 			<input type="text" name="filmName" style="width: 65%" maxlength="100"><br><br>
@@ -67,22 +67,34 @@
 				<option value="R">R</option>
 				<option value="NC17">NC-17</option>
 				<option value="NR">NR</option>
+			</select><br><br>
+			Genre:
+			<select name="genre">
+				<option value="1">Comedy</option>
+				<option value="2">Action</option>
+				<option value="3">Science Fiction</option>
+				<option value="4">Horror</option>
+				<option value="5">Romance</option>
+				<option value="6">Sports</option>
+				<option value="7">War</option>
+				<option value="8">Drama</option>
+				<option value="9">Thriller</option>
 			</select>
 			<br><br>
 			Plot Summary:
-			<textarea name="summary" rows="4" cols="50" maxlength="1000">
-			</textarea>
+			<textarea name="summary" rows="4" cols="50" maxlength="1000"></textarea>
 			<br><br>
-			<form action="movie_submit.php" method="post">
-				<input type="submit" name="submit" value="Submit">	
-			</form>
+			
+			<input type="submit" name="submit" value="Submit">	
+			
 				    	
     	</form>
   	</div>
 	</div>
 
 	</div>
-
+	
+	<!-- javascript for the "add movie" modal -->
 	 <script>
 	 // Get the modal
 	 var modal = document.getElementById('myModal');
@@ -119,12 +131,14 @@
 <?php
     }
     ?>
-	</div
+	</div>
 <?php
 	
 } else {
     echo "0 results";
 }
+	HTMLFooter();
+	
 $Connection->close();		
 	
 ?>
