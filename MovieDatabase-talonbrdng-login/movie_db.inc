@@ -26,7 +26,7 @@ session_start();
 	{
 		echo '<div class="header">';
 		echo "<h1>ScrumDB</h1>\n";
-		echo "<h3>Movies, TV, and Celebrities</h3>\n";
+		echo "<h3>Scrumbags love movies</h3>\n";
 		echo "<div class=\"search\">\n";
 		echo "<input type=\"text\" name=\"search\" placeholder=\"Search...\">\n";
 		echo "</div>\n";
