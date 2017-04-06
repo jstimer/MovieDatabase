@@ -34,6 +34,7 @@
 				$SQLFilm = "select filmID, film_name, film_release, runningTime, mpaa_rating, film_summary from Film where filmID = $var_value;";
 	
 				$result = $Connection->query($SQLFilm);
+
 	
 				if ($result->num_rows > 0) {
     			// output data of each row
@@ -44,12 +45,12 @@
     				$mpaa_rating = $row["mpaa_rating"];
     				$film_summary = $row["film_summary"];
     				
-    				//echo $film_name;
-        			//echo "filmID: " . $row["filmID"]. " - Film Name: " . $row["film_name"]. "Release Date:" . $row["film_release"]. "Film Duration: " . $row["runningTime"]. "Rating:" . $row["mpaa_rating"]. "<br>";
     			}
 				} else {
     			echo "0 results";
 				}
+
+
 				$Connection->close();
 				
 				?>
@@ -67,6 +68,7 @@
 				</li>
 				<li><strong>Length: <?php echo $runningTime . " min"; ?></strong></li>
 				<li><strong>Release Date: <?php echo $film_release; ?></strong></li>
+				<!--<li><strong>Genre: <?php echo $genre; ?></strong></li> -->
 			</ul>
 			<p><strong> Plot: </strong><?php echo $film_summary; ?>
 			</p>

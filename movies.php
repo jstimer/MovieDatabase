@@ -39,7 +39,7 @@
 		<div class="body">
 
 	 <!-- Trigger/Open Edit Modal -->
-	 <button id="myBtn" style="float: right";>Add</button><br>
+	 <button id="myBtn" style="float: right";>Add Movie</button><br>
 
 	<!-- Edit Modal -->
 	<div id="myModal" class="modal">
@@ -47,7 +47,7 @@
   	<!-- Edit Modal content -->
 	<div class="modal-content">
   	<div class="modal-header">
-    	<span class="close">&times;</span>
+    	<span class="close" style="cursor:pointer">&times;</span>
     	<h2>Add Movie</h2>
   	</div>
   	<div class="modal-body">
@@ -83,8 +83,8 @@
 				<option value="9">Thriller</option>
 			</select>
 			<br><br>
-			Plot Summary:
-			<textarea name="summary" rows="4" cols="50" maxlength="1000" required="true"></textarea>
+			Plot Summary: <br>
+			<textarea name="summary" rows="4" cols="50" maxlength="1000" required="true" wrap="hard"></textarea>
 			<br><br>
 			
 			<input type="submit" name="submit" value="Submit">	
