@@ -21,18 +21,19 @@
 
 	if (isset($_POST['filmName']))
 	{
-		$varMovie = $_POST['filmName'];
+		$varMovie = mysqli_real_escape_string($Connection, $_POST['filmName']);
 		$movRelease = $_POST['releaseDate'];
 		$runningTime = $_POST['runtime'];
 		$mpaa = $_POST['rating'];
-		$synopsis = $_POST['summary'];
+		$synopsis = mysqli_real_escape_string($Connection, $_POST['summary']);
 		$movGenre = $_POST['genre'];
 	
-		$sql = "INSERT INTO Film VALUES (NULL, '$varMovie', '$movRelease', $runningTime, '$mpaa', '$synopsis', '$movGenre')";
+		$sql = "INSERT INTO Film VALUES (NULL, '".$varMovie."', '$movRelease', $runningTime, '$mpaa', '".$synopsis."', '$movGenre')";
 
 
 		if ($Connection->query($sql) === TRUE) {
    	 echo "New record created successfully";
+   	 //header( "Location: movies.php" ); 	 
 		} else {
    	 echo "Error: " . $sql . "<br>" . $Connection->error;
 		}
