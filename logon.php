@@ -24,6 +24,7 @@ include 'init.php';
 					</li>
 					<li>
 						<a href="register.php">Register</a>
+						<a href="index.php" onclick="<?php session_destroy();?>">Logout</a>
 					</li>
 				</ul>
 			</form>
