@@ -27,6 +27,7 @@ session_start();
 		echo '<div class="header">';
 		echo "<h1>Movie Database Name</h1>\n";
 		echo "<h3>Subtitle goes here</h3>\n";
+		echo $_SESSION["user"];
 		echo "<div class=\"search\">\n";
 		echo "<input type=\"text\" name=\"search\" placeholder=\"Search...\">\n";
 		echo "</div>\n";
@@ -40,7 +41,9 @@ session_start();
 		echo "<li><a href=\"movies.php\">Movies</a></li>\n";
 		echo "<li><a href=\"about_us.php\">About Us</a></li>\n";
 		echo "<li><a href=\"contact_us.php\">Contact Us</a></li>\n";
-		echo "<li><a href=\"single.php\">Single</a></li>\n";
+		echo "<li><a href=\"logon.php\">Logon</a></li>\n";
+		echo "<li><a href=\"register.php\">Register</a></li>\n";
+		echo "<li><a href=\"index.php\" onclick=\"<?php session_destroy();?>\">Logout</a></lis\n";
 		echo "</ul>\n";
 
 	}
