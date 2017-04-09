@@ -9,7 +9,7 @@ include 'init.php';
 	?>
 		
 		<div class="body">
-			 <button id="myBtn" style="float: right";>Login</button><br>
+			 <button id="myBtn" style="float: left";>Login</button><br>
 			
 			<div id="myModal" class="modal">
 
@@ -36,9 +36,9 @@ include 'init.php';
 			</form>
   	</div>
 	</div>
-
 	</div>
-	
+	</div>
+
 	<!-- javascript for the "add movie" modal -->
 	 <script>
 	 // Get the modal

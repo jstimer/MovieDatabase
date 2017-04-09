@@ -43,7 +43,7 @@ session_start();
 		echo "<li><a href=\"contact_us.php\">Contact Us</a></li>\n";
 		echo "<li><a href=\"logon.php\">Logon</a></li>\n";
 		echo "<li><a href=\"register.php\">Register</a></li>\n";
-		echo "<li><a href=\"index.php\" onclick=\"<?php session_destroy();?>\">Logout</a></lis\n";
+		echo "<li><a href=\"index.php\" onclick=\"<?php session_destroy();?>\">Logout</a></li>\n";
 		echo "</ul>\n";
 
 	}

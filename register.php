@@ -1,5 +1,5 @@
 <?php require "movie_db.inc";
-session_start();
+include 'init.php';
 	StartHTML( "Movie Database" );
 	
 	HTMLHeader();
@@ -7,65 +7,75 @@ session_start();
 	HTMLNav();
 	
 	?>
-			
-			
-			
-			<?php
-				$Server = "willy";
-				$UserName = "comp305_grp2";
-				$Password = "Scrumbags1!";
-				$Database = "comp305_grp2";
-				
-				// create connection
-				$Connection = new mysqli( $Server, $UserName, $Password, $Database);
-				// check connection
-				if ( $Connection->connect_error )
-				{
-					// stop the script and echo an error message
-						echo "<h2>Database Error</h2>\n";
-						die( "MySQLi Connection Error: ".$Connection->connect_error."\n" );
-				}
-				//echo "Connection Successful";
-				
-				
-				
-?>
-			<div class="body">				
-			<h2 class="movie-title"><?php echo $film_name; ?> </h2>
-			
-			
-				
-				
-		      <form class="form-signin" method="POST">
-			<h2 class="form-signin-heading">Please Register</h2>
-			<div class="input-group">
-			  <span class="input-group-addon" id="basic-addon1">@</span>
-			  <input type="text" name="username" class="form-control" placeholder="Username" required>
-			</div>
 		
-			<label for="inputPassword" class="sr-only">Password</label>
-			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-			<a class="btn btn-lg btn-primary btn-block" href="login.php">Login</a>
-		      </form>
+		<div class="body">
+			 <button id="myBtn" style="float: left";>Register</button><br>
+			
+			<div id="myModal" class="modal">
 
-			</div>
+		  	<!-- Edit Modal content -->
+			<div class="modal-content">
+		  	<div class="modal-header">
+		    	<span class="close" style="cursor:pointer">&times;</span>
+		    	<h2>Register</h2>
+		  	</div>
+		  	<div class="modal-body">			
+
+		
+			<form method="POST" action="connectSignup.php">
+<td>FirstName</td><br><td> <input type="text" name="first_name"></td>
+</tr><br><br>
+<tr>
+<td>LastName</td><br><td> <input type="text" name="last_name"></td>
+</tr><br><br>
+<tr>
+<td>Email</td><br><td> <input type="text" name="email"></td>
+</tr><br><br>
+<tr>
+<td>UserName</td><br><td> <input type="text" name="username"></td>
+</tr><br><br>
+<tr>
+<td>Password</td><br><td> <input type="password" name="password"></td>
+</tr><br><br>
+<tr>
+<td><input id="button" type="submit" name="submit" value="Sign-Up"></td>
+</tr><br><br>
+</form>
+  	</div>
+	</div>
+	</div>
+	</div>
+
+	<!-- javascript for the "add movie" modal -->
+	 <script>
+	 // Get the modal
+	 var modal = document.getElementById('myModal');
+
+	 // Get the button that opens the modal
+	 var btn = document.getElementById("myBtn");
+
+	 // Get the <span> element that closes the modal
+	 var span = document.getElementsByClassName("close")[0];
+
+	 // When the user clicks on the button, open the modal
+	 btn.onclick = function() {
+    	 	modal.style.display = "block";
+	 }
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+   		modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+    		if (event.target == modal) {
+       			modal.style.display = "none";
+    		}
+	}
+	</script>
+	
 			<?php
-			
-			if (isset($_POST['username']) && isset($_POST['password'])){
-			$username = $_POST['username'];
-			
-			$password = $_POST['password'];
-		 
-			$query = "INSERT INTO `userAccount` (username, userPass) VALUES ('$username', '$password')";
-			$result = mysqli_query($connection, $query);
-			if($result){
-			    $smsg = "User Created Successfully.";
-			}else{
-			    $fmsg ="User Registration Failed";
-			}
-		    }
-				
 			
 			// close the connection
 			$Connection->close();
