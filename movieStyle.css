@@ -1,4 +1,14 @@
 /* Style Sheet for the website */
+@import url(http://fonts.googleapis.com/css?family=Bungee+Inline);
+@import url(http://fonts.googleapis.com/css?family=Rubik);
+html
+{
+	background-color:#606060 ;
+	background-image: url("images/film_Roll_background.jpg"),  url("images/film_Roll_background.jpg");
+	background-repeat: repeat-y;
+  	background-position: left center, right center;
+}
+
 div.header
 {
 	background-color:#3c94e6;
@@ -10,9 +20,16 @@ div.header
 
 }	 
 
+div.header h1
+{
+	font-family: 'Bungee Inline';
+	
+}
 div.header h3
 {
-	font-style:italic;
+	
+	font-family: 'Bungee Inline';  
+	\font-style:italic;
 }
 
 div.search
@@ -69,7 +86,10 @@ ul.menu li a.active {
 }
 
 body
-{
+{	background: #404040;
+	background-image: url("images/film_Roll_background.jpg"),  url("images/film_Roll_background.jpg");
+	background-repeat: repeat-y;
+  	background-position: left center, right center;
 	margin: 0px 40px 0px 40px;
 	background-color:#606060 ;
 	min-width: 600px;
@@ -77,7 +97,7 @@ body
 }
 
 div.body
-{
+{	
 	background-color:#FFFFFF;
 	border: 1px solid black;
 	text-align: left;
