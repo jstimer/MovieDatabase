@@ -44,8 +44,7 @@
     				$mpaa_rating = $row["mpaa_rating"];
     				$film_summary = $row["film_summary"];
     				
-    				//echo $film_name;
-        			//echo "filmID: " . $row["filmID"]. " - Film Name: " . $row["film_name"]. "Release Date:" . $row["film_release"]. "Film Duration: " . $row["runningTime"]. "Rating:" . $row["mpaa_rating"]. "<br>";
+    				
     			}
 				} else {
     			echo "0 results";

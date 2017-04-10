@@ -9,7 +9,7 @@ include 'init.php';
 	?>
 		
 		<div class="body">
-			 <button id="myBtn" style="float: left";>Log In</button><br><br>
+			 <button id="myBtn" style="float: left";>Register</button><br><br>
 			
 			<div id="myModal" class="modal">
 
@@ -17,30 +17,33 @@ include 'init.php';
 			<div class="modal-content">
 		  	<div class="modal-header">
 		    	<span class="close" style="cursor:pointer">&times;</span>
-		    	<h2>Log In</h2>
-			
-	
+		    	<h2>Register</h2>
 		  	</div>
 		  	<div class="modal-body">			
 
-			<form action="login.php" method="post">
-				<ul id="login">
-					<br>
-						Username: <br>
-						<input type="text" name ="username"><br><br>
-					
-						Password: <br>
-						<input type="password" name ="password"><br><br>
-					
-						<input type="submit" value="Log In"><br><br>
-						<a href="register.php">Register</a>
-					
-			</form>
-
+		
+			<form method="POST" action="connectSignup.php">
+<td>FirstName</td><br><td> <input type="text" name="first_name"></td>
+</tr><br><br>
+<tr>
+<td>LastName</td><br><td> <input type="text" name="last_name"></td>
+</tr><br><br>
+<tr>
+<td>Email</td><br><td> <input type="text" name="email"></td>
+</tr><br><br>
+<tr>
+<td>UserName</td><br><td> <input type="text" name="username"></td>
+</tr><br><br>
+<tr>
+<td>Password</td><br><td> <input type="password" name="password"></td>
+</tr><br><br>
+<tr>
+<td><input id="button" type="submit" name="submit" value="Sign-Up"></td>
+</tr><br><br>
+</form>
   	</div>
 	</div>
 	</div>
-<a href="index.php" onclick="<?php session_destroy();?>">Log Out</a>
 	</div>
 
 	<!-- javascript for the "add movie" modal -->
