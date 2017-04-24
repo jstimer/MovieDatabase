@@ -130,6 +130,8 @@ div.footer
 	font-family: 'Rubik';
 }
 
+
+
 /* The add movie Modal (background) [in movies.php] */
 .modal {
     display: none; /* Hidden by default */

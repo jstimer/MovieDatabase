@@ -54,9 +54,7 @@ if(empty($_POST) === false)
 	}
 
 }
-else{
-echo 'is empty';
-}
+
 ?>
 
 

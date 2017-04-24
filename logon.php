@@ -40,7 +40,7 @@ include 'init.php';
   	</div>
 	</div>
 	</div>
-<a href="index.php" onclick="<?php session_destroy();?>">Log Out</a>
+
 	</div>
 
 	<!-- javascript for the "add movie" modal -->
