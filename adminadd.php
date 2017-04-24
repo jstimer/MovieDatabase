@@ -12,12 +12,13 @@ function NewUser()
 	$first_name = $_POST['first_name'];
 	$last_name =  $_POST['last_name'];
 	$email = $_POST['email'];
-	$query = "INSERT INTO users (username,password,first_name,last_name,email) VALUES ('$username','$password','$first_name','$last_name', '$email')";
+	$admin = $_POST['admin'];
+	$query = "INSERT INTO users (username,password,first_name,last_name,email,admin) VALUES ('$username','$password','$first_name','$last_name', '$email', '$admin')";
 	$data = mysql_query ($query)or die(mysql_error());
 	if($data)
 	{
 	echo "YOUR REGISTRATION IS COMPLETED...";
-	header("location:home.php");
+	echo $admin;
 exit();
 
 	}

@@ -9,6 +9,7 @@ include 'init.php';
 	?>
 		
 		<div class="body">
+<br>
 			 <button id="myBtn" style="float: left";>Register</button><br><br>
 			
 			<div id="myModal" class="modal">

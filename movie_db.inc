@@ -32,6 +32,7 @@ session_start();
 		echo " \n<br>";
 		
 		if(!$_SESSION["user"]){
+		
 ?>
 		
 		<button id="myBtn" style="float: left";>Log In</button><br><br>
