@@ -1,7 +1,17 @@
 /* Style Sheet for the website */
+@import url(http://fonts.googleapis.com/css?family=Bungee+Inline);
+@import url(http://fonts.googleapis.com/css?family=Rubik);
+html
+{
+	background-color:#606060 ;
+	background-image: url("images/film_Roll_background.jpg"),  url("images/film_Roll_background.jpg");
+	background-repeat: repeat-y;
+  	background-position: left center, right center;
+}
+
 div.header
 {
-	background-color:#1a3854;
+	background-color:#3c94e6;
 	border: 1px solid black;
 	min-width:600px;
 	margin: 0px 0px 0px 0px;
@@ -10,9 +20,17 @@ div.header
 
 }	 
 
+div.header h1
+{
+	font-family: 'Bungee Inline';
+	
+	
+}
 div.header h3
 {
-	font-style:italic;
+	
+	font-family: 'Bungee Inline';  
+	\font-style:italic;
 }
 
 div.search
@@ -35,7 +53,7 @@ input[type=text]:focus {
 
 ul.menu
 {
-	width:1000px;
+	width:62%;
 	margin-top:0px;
 	margin-left:auto;
 	margin-right:auto;
@@ -56,6 +74,7 @@ ul.menu li a
 	color:white;
 	padding: 10px 20px;
 	text-decoration: none;
+	font-family: 'Rubik';
 	
 }
 ul.menu li a:hover
@@ -69,33 +88,38 @@ ul.menu li a.active {
 }
 
 body
-{
+{	background: #404040;
+	background-image: url("images/film_Roll_background.jpg"),  url("images/film_Roll_background.jpg");
+	background-repeat: repeat-y;
+  	background-position: left center, right center;
 	margin: 0px 40px 0px 40px;
-	background-color:#404040 ;
+	background-color:#606060 ;
 	min-width: 600px;
+	font-family: 'Rubik';
 	
 }
 
 div.body
-{
+{	
 	background-color:#FFFFFF;
 	border: 1px solid black;
 	text-align: left;
 	clear:both;
-	width:60%;
+	width:62%;
 	margin-top:0px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:0px;
 	padding: 5px 10px;
 	word-wrap:break-word;
+	font-family: 'Rubik';
 	
 }
 
 div.footer
 {
 	background-color:black;
-	width:60%;
+	width:62%;
 	margin-top:0px;
 	margin-left:auto;
 	margin-right:auto;
@@ -103,4 +127,64 @@ div.footer
 	border:1px solid black;
 	color:white;
 	padding: 5px 10px;
+	font-family: 'Rubik';
 }
+
+/* The add movie Modal (background) [in movies.php] */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    font-family: 'Rubik';
+}
+
+  /* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #3c94e6;
+    color: white;
+    font-family: 'Rubik';
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+
+
+/* Modal Content */
+.modal-content {
+    font-family: 'Rubik';
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 65%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/* end of add movie modal window in movies.php */
+

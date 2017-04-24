@@ -25,8 +25,8 @@ session_start();
 	function HTMLHeader()
 	{
 		echo '<div class="header">';
-		echo "<h1>Movie Database Name</h1>\n";
-		echo "<h3>Subtitle goes here</h3>\n";
+		echo "<h1>ScrumDB</h1>\n";
+		echo "<h3>Scrumbags Love Movies ;^)</h3>\n";
 		echo $_SESSION["user"];
 		echo "<div class=\"search\">\n";
 		echo "<input type=\"text\" name=\"search\" placeholder=\"Search...\">\n";
@@ -39,10 +39,15 @@ session_start();
 		echo "<ul class=\"menu\">";
 		echo "<li><a href=\"index.php\">Home</a></li>\n";
 		echo "<li><a href=\"movies.php\">Movies</a></li>\n";
-		echo "<li><a href=\"about_us.php\">About Us</a></li>\n";
+		
 		echo "<li><a href=\"contact_us.php\">Contact Us</a></li>\n";
-		echo "<li><a href=\"logon.php\">Logon</a></li>\n";
+		echo "<li><a href=\"logon.php\">Log In</a></li>\n";
 		echo "<li><a href=\"register.php\">Register</a></li>\n";
+		if($_SESSION["admin"] = 'y'){
+		echo "<li><a href=\"admin.php\">Admin</a></li>\n";		
+		}
+		
+		echo "<li><a href=\"user.php\">User</a></li>\n";
 		echo "</ul>\n";
 
 	}
