@@ -85,6 +85,7 @@ ul.menu li a:hover
 ul.menu li a.active {
     background-color: #1a3854; /* Add a color to the "active/current" link */
     color: white;
+   
 }
 
 body
@@ -175,6 +176,9 @@ div.footer
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
+}
+table, th, td {
+     border: 1px solid black;
 }
 
 /* Add Animation */

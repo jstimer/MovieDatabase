@@ -33,6 +33,7 @@ session_start();
 		
 		if(!$_SESSION["user"]){
 ?>
+		
 		<button id="myBtn" style="float: left";>Log In</button><br><br>
 			
 			<div id="myModal" class="modal">
@@ -122,8 +123,10 @@ session_start();
 		echo "<li><a href=\"admin.php\">Admin</a></li>\n";		
 		}
 		
+		if($_SESSION["user"]){
 		echo "<li><a href=\"user.php\">My Home</a></li>\n";
 		echo "</ul>\n";
+		}
 
 	}
 	

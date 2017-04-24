@@ -98,5 +98,9 @@ StartHTML( "Movie Database" );
 	}
 	</script>
 
+
+	
 <?php
+echo "<br>";
+echo "<a href=\"viewUsers.php\">users</a>";
 
