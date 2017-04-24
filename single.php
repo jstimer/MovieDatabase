@@ -54,7 +54,9 @@
 				
 				?>
 				
-			<div class="body">				
+			<div class="body">	
+			<button id="editBtn" style="float: right";>Edit Movie</button>
+			<button id="deleteBtn" style="float: right";>Delete</button><br>			
 			<h2 class="movie-title"><?php echo $film_name; ?> </h2>
 			
 			

@@ -7,7 +7,7 @@
 	HTMLNav();
 	
 	
-	echo "<a href=\"movies.html\" class=\"active\"></a>";
+	echo "<a href=\"movies.php\" class=\"active\"></a>";
 
 	
 	$Server = "willy";
@@ -129,7 +129,7 @@
     	while($row = $result->fetch_assoc()) {
     		$name = $row["filmID"]; 
     	?>
-    		 <a href="single.php?filmName=<?php echo $name ?>"><?php echo $row["film_name"] ?></a>
+    		 <a href="single.php?filmName=<?php echo $name ?>"><?php echo $row["film_name"] ?></br></a>
 <?php
     }
     ?>

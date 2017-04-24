@@ -9,7 +9,7 @@
 	?>
 		
 		
-<?php 		
+		
 		<!-- webpage info should go here-->
 		<div class="body">
 			<!DOCTYPE html>
