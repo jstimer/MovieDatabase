@@ -28,7 +28,6 @@
 				//echo "Connection Successful";
 				
 				// make a select statement to get data from the database
-  
 				$var_value = $_GET['filmName'];
 				
 				$SQLFilm = "select filmID, film_name, film_release, runningTime, mpaa_rating, film_summary from Film where filmID = $var_value;";
@@ -47,13 +46,17 @@
     				
     			}
 				} else {
-    			echo "0 results";
+    				echo "0 results";
 				}
 				$Connection->close();
 				
 				?>
 				
-			<div class="body">				
+			<div class="body">
+			
+			<button id="editBtn" style="float: right";>Edit Movie</button>
+			<button id="deleteBtn" style="float: right";>Delete</button><br>
+							
 			<h2 class="movie-title"><?php echo $film_name; ?> </h2>
 			
 			
@@ -71,8 +74,7 @@
 			</p>
 			</div>
 			
-			<?php	
-				HTMLFooter(); ?>
+			<?php	HTMLFooter(); ?>
 
 			<!--
 			<ul>
@@ -96,15 +98,9 @@
 				<li><strong>Stars:</strong> Actor names</li>
 			</ul>
 		
-		
-		
-			<p>Pan's Labyrinth, originally known in Spanish as El Laberinto del Fauno (The Labyrinth of the Faun), </p>
-			<p>is a 2006 Spanish-Mexican dark fantasy film written and directed by Mexican filmmaker Guillermo del Toro.</p>
-			<p>It was produced and distributed by Esperanto Films.</p>
 			</div>
 			-->
 		
 		<?php	
-			// close the connection
 			$Connection->close();
 		?> <!-- end of php -->

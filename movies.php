@@ -39,10 +39,10 @@
 		<div class="body">
 
 	 <!-- Trigger/Open Edit Modal -->
-	 <button id="myBtn" style="float: right";>Add Movie</button><br>
+	 <button id="addBtn" style="float: right";>Add Movie</button><br>
 
 	<!-- Edit Modal -->
-	<div id="myModal" class="modal">
+	<div id="addModal" class="modal">
 
   	<!-- Edit Modal content -->
 	<div class="modal-content">
@@ -99,10 +99,10 @@
 	<!-- javascript for the "add movie" modal -->
 	 <script>
 	 // Get the modal
-	 var modal = document.getElementById('myModal');
+	 var modal = document.getElementById('addModal');
 
 	 // Get the button that opens the modal
-	 var btn = document.getElementById("myBtn");
+	 var btn = document.getElementById("addBtn");
 
 	 // Get the <span> element that closes the modal
 	 var span = document.getElementsByClassName("close")[0];
@@ -129,7 +129,7 @@
     	while($row = $result->fetch_assoc()) {
     		$name = $row["filmID"]; 
     	?>
-    		 <a href="single.php?filmName=<?php echo $name ?>"><?php echo $row["film_name"] ?></br></a>
+    		 <a href="single.php?filmName=<?php echo $name ?>"><?php echo $row["film_name"] ?></a>
 <?php
     }
     ?>
