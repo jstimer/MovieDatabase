@@ -11,10 +11,8 @@
 		
 		
 		<!-- webpage info should go here-->
-		<div class="body">
-			<!DOCTYPE html>
-<html>
-<head>
+		
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing:border-box}
@@ -113,27 +111,28 @@ body {font-family: Verdana,sans-serif;margin:0}
   .prev, .next,.text {font-size: 11px}
 }
 </style>
-</head>
-<body>
+
+<div class="body">
+<p><b> Top videos this week! </b></p>
 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="kingkong.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
+  <img src="images/kongpbanner3.jpg "width="400px" height ="200px">
+  <div class="text">Kong: Skull Island</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="darkknight.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
+  <img src="images/darkknight.jpg "width="90%" height ="200">
+  <div class="text">The Dark Knight</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="sausageparty.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
+  <img src="images/sausageparty.jpg "width="90%" height ="200">
+  <div class="text">Sausage Party</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -176,13 +175,119 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+<!-- Top Rated Movies -->
+<p><b>Top Rated Movies</b></p>
+
+<p>
+ <a href="http://10.1.2.2/~kap7849/Comp305/MovieDatabase-talonbrdng-NewMaster/single.php?filmName=881661">
+<img border="0" alt="W3Schools" src="images/guardians.jpg" width="100" height="100">
+</a>
+
+ <a href="http://10.1.2.2/~kap7849/Comp305/MovieDatabase-talonbrdng-NewMaster/single.php?filmName=881641">
+<img border="0" alt="W3Schools" src="images/40yr.jpg" width="100" height="100">
+</a>
+
+ <a href="http://10.1.2.2/~kap7849/Comp305/MovieDatabase-talonbrdng-NewMaster/single.php?filmName=881616">
+<img border="0" alt="W3Schools" src="images/2fast.jpg" width="100" height="100">
+</a>
+
+ <a href="http://10.1.2.2/~kap7849/Comp305/MovieDatabase-talonbrdng-NewMaster/single.php?filmName=881617">
+<img border="0" alt="W3Schools" src="images/back2.jpg" width="100" height="100">
+</a>
+
+ <a href="http://10.1.2.2/~kap7849/Comp305/MovieDatabase-talonbrdng-NewMaster/single.php?filmName=881652">
+<img border="0" alt="W3Schools" src="images/knocked.jpg" width="100" height="100">
+</a>
+
+
+
+<!-- hover images -->
+<style>
+.container {
+  position: relative;
+  width: 50%;
+  white-space: nowrap;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+
+<p><b>Upcoming Movies!</b></p>
+
+<div class="container">
+  <img src="images/transformers.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Release Date: June 23, 2017</div>
+  </div>
+  </div>
+
+<p>
+ Humans and Transformers are at war, Optimus Prime is gone.<br>
+ The key to saving our future lies buried in the secrets of the past,<br> 
+ in the hidden history of Transformers on Earth.
+  </p>
+
+<div class="container">
+  <img src="images/mummy.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Release Date: June 9, 2017</div>
+  </div>
+</div>
+
+<div class="container">
+  <img src="images/despicable.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Release Date: June 30, 2017</div>
+  </div>
+</div>
+
+<div class="container">
+  <img src="images/spider.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Release Date: July 5, 2017</div>
+  </div>
+</div>
 
 </body>
-</html> 
 
-		</div>
-		
-		
+
+
+
 
 <?php	
 		HTMLFooter();
