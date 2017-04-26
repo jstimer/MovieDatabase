@@ -28,6 +28,7 @@
 				//echo "Connection Successful";
 				
 				// make a select statement to get data from the database
+  
 				$var_value = $_GET['filmName'];
 				
 				$SQLFilm = "select filmID, film_name, film_release, runningTime, mpaa_rating, film_summary, poster, trailer_embed from Film where filmID = $var_value;";
@@ -49,30 +50,16 @@
 				} else {
     			echo "0 results";
 				}
-
-			$SQLAct = "SELECT ActorListInMovie.roleName, ActorListInMovie.filmId, Film.filmID FROM ActorListInMovie, Film WHERE ActorListInMovie.filmId = $var_value;";
-
-			$ActResult = $Connection->query($SQLAct);
-
-			if ($result->num_rows > 0) {
-			while($row = $ActResult->fetch_assoc()) {
-    				$roleName = $row["roleName"];
-			}
-			}else{
-				echo "0 results";
-				}
 				$Connection->close();
 				
 				?>
 				
-			<div class="body">	
-			<button id="editBtn" style="float: right";>Edit Movie</button>
-			<button id="deleteBtn" style="float: right";>Delete</button><br>			
+			<div class="body">				
 			<h2 class="movie-title"><?php echo $film_name; ?> </h2>
 			
+		
 			
-				
-				
+				<?php echo '<img src = ' . $poster . '>'; ?>
 			
 			<ul>
 				<li><strong>Rated: <?php echo $mpaa_rating; ?></strong> 
@@ -81,9 +68,10 @@
 				<li><strong>Length: <?php echo $runningTime . " min"; ?></strong></li>
 				<li><strong>Release Date: <?php echo $film_release; ?></strong></li>
 			</ul>
-			<p><strong> Plot: </strong><?php echo $film_summary; ?></p>
-			<p><?php echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe>";?></p></br>
-			<p><strong> Role: </strong><?php echo $roleName; ?>
+			<p><strong> Plot: </strong><?php echo $film_summary; ?>
+			</p>
+			<p><?php echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe>";?>
+			</p>
 			</div>
 			
 			<?php	
