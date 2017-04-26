@@ -28,7 +28,6 @@
 				//echo "Connection Successful";
 				
 				// make a select statement to get data from the database
-  
 				$var_value = $_GET['filmName'];
 				
 				$SQLFilm = "select filmID, film_name, film_release, runningTime, mpaa_rating, film_summary, poster, trailer_embed from Film where filmID = $var_value;";
@@ -50,16 +49,19 @@
 				} else {
     			echo "0 results";
 				}
-				$Connection->close();
+
+			
 				
 				?>
 				
-			<div class="body">				
+			<div class="body">	
+			<button id="editBtn" style="float: right";>Edit Movie</button>
+			<button id="deleteBtn" style="float: right";>Delete</button><br>			
 			<h2 class="movie-title"><?php echo $film_name; ?> </h2>
 			
-		
 			
-				<?php echo '<img src = ' . $poster . '>'; ?>
+				<?php echo '<img src= ' . $poster . '>'; ?>
+				
 			
 			<ul>
 				<li><strong>Rated: <?php echo $mpaa_rating; ?></strong> 
@@ -68,14 +70,26 @@
 				<li><strong>Length: <?php echo $runningTime . " min"; ?></strong></li>
 				<li><strong>Release Date: <?php echo $film_release; ?></strong></li>
 			</ul>
-			<p><strong> Plot: </strong><?php echo $film_summary; ?>
-			</p>
-			<p><?php echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe>";?>
-			</p>
+			<p><strong> Plot: </strong><?php echo $film_summary; ?></p>
+			<p><?php echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe>";?></p></br>
+
+			<?php 
+			$SQLRole = "SELECT ActorListInMovie.roleName, ActorListInMovie.filmId, Film.filmID FROM ActorListInMovie, Film WHERE ActorListInMovie.filmId=Film.filmID and ActorListInMovie.filmId = $var_value;";
+
+			$RoleResult = $Connection->query($SQLRole);
+
+			if ($RoleResult->num_rows > 0) {
+				//echo $RoleResult->num_rows . "</br>";
+			while($row = $RoleResult->fetch_assoc()) {
+    				echo $row["roleName"] . "</br>";
+			}
+			} else {
+				echo "No actor roles.";
+				}			
+			?>
 			</div>
 			
-			<?php	
-				HTMLFooter(); ?>
+			<?php HTMLFooter(); ?>
 
 			<!--
 			<ul>
@@ -99,15 +113,9 @@
 				<li><strong>Stars:</strong> Actor names</li>
 			</ul>
 		
-		
-		
-			<p>Pan's Labyrinth, originally known in Spanish as El Laberinto del Fauno (The Labyrinth of the Faun), </p>
-			<p>is a 2006 Spanish-Mexican dark fantasy film written and directed by Mexican filmmaker Guillermo del Toro.</p>
-			<p>It was produced and distributed by Esperanto Films.</p>
-			</div>
 			-->
 		
 		<?php	
 			// close the connection
 			$Connection->close();
-		?> <!-- end of php -->
+		?> 
