@@ -56,7 +56,18 @@
 				
 			<div class="body">	
 			<button id="editBtn" style="float: right";>Edit Movie</button>
-			<button id="deleteBtn" style="float: right";>Delete</button><br>			
+
+			<button id="deleteBtn" onclick="deleteConfirmation()" style="float: right";>Delete</button><br>
+			<script>
+				function deleteConfirmation() {
+    					if (confirm("Delete this movie?") == true) {
+						
+    					} else {
+        
+    					}
+				}
+			</script>
+			
 			<h2 class="movie-title"><?php echo $film_name; ?> </h2>
 			
 			
@@ -71,8 +82,9 @@
 				<li><strong>Release Date: <?php echo $film_release; ?></strong></li>
 			</ul>
 			<p><strong> Plot: </strong><?php echo $film_summary; ?></p>
-			<p><?php echo "<center><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe></center>";?></p></br>
-
+			<p><?php echo "<center><iframe width=\"545\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe></center>";?></p></br>
+			<p><strong> Cast: </strong></p>
+			<!-- Start of actor role code -->
 			<?php 
 			$SQLRole = "SELECT ActorListInMovie.roleName, ActorListInMovie.filmId, Film.filmID FROM ActorListInMovie, Film WHERE ActorListInMovie.filmId=Film.filmID and ActorListInMovie.filmId = $var_value;";
 
@@ -84,7 +96,7 @@
     				echo $row["roleName"] . "</br>";
 			}
 			} else {
-				echo "No actor roles.";
+				echo "No actor roles submitted.";
 				}			
 			?>
 			</div>
