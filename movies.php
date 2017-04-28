@@ -36,7 +36,7 @@
 	if ($result->num_rows > 0) {
     // output data of each row
 	?>
-		<div class="body">
+	<div class="body">
 
 	 <!-- Trigger/Open Edit Modal -->
 	 <button id="addBtn" style="float: right";>Add Movie</button><br>

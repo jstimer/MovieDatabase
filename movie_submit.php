@@ -28,14 +28,14 @@
 		$synopsis = mysqli_real_escape_string($Connection, $_POST['summary']);
 		$movGenre = $_POST['genre'];
 	
-		$sql = "INSERT INTO Film VALUES (NULL, '".$varMovie."', '$movRelease', $runningTime, '$mpaa', '".$synopsis."', '$movGenre')";
+		$SQLAdd = "INSERT INTO Film VALUES (NULL, '".$varMovie."', '$movRelease', $runningTime, '$mpaa', '".$synopsis."', '$movGenre', NULL, NULL)";
 
 
-		if ($Connection->query($sql) === TRUE) {
+		if ($Connection->query($SQLAdd) === TRUE) {
    	 echo "New record created successfully";
    	 //header( "Location: movies.php" ); 	 
 		} else {
-   	 echo "Error: " . $sql . "<br>" . $Connection->error;
+   	 echo "Error: " . $SQLAdd . "<br>" . $Connection->error;
 		}
 	}
 
