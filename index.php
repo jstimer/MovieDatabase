@@ -11,6 +11,8 @@
 		
 		
 		<!-- webpage info should go here-->
+
+
 		
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,9 +21,11 @@
 body {font-family: Verdana,sans-serif;margin:0}
 .mySlides {display:none}
 
+
+
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 500px;
   position: relative;
   margin: auto;
 }
@@ -60,7 +64,7 @@ body {font-family: Verdana,sans-serif;margin:0}
   position: absolute;
   bottom: 8px;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 /* Number text (1/3 etc) */
@@ -119,20 +123,20 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="images/kongpbanner3.jpg "width="400px" height ="200px">
-  <div class="text">Kong: Skull Island</div>
+  <img src="images/kongpbanner3.jpg "width="500px" height ="200px">
+  <div class="text"></div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="images/darkknight.jpg "width="90%" height ="200">
-  <div class="text">The Dark Knight</div>
+  <img src="images/darkknight.jpg "width="500px" height ="200">
+  <div class="text"></div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="images/sausageparty.jpg "width="90%" height ="200">
-  <div class="text">Sausage Party</div>
+  <img src="images/sausageparty.jpg "width="500px" height ="200">
+  <div class="text"></div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -198,7 +202,9 @@ function showSlides(n) {
  <a href="http://10.1.2.2/~kap7849/Comp305/MovieDatabase-talonbrdng-NewMaster/single.php?filmName=881652">
 <img border="0" alt="W3Schools" src="images/knocked.jpg" width="100" height="100">
 </a>
-
+			<!-- Welcome message -->
+<p><b>Welcome to our Movie Website! Enjoy free trailers and information about<br> 
+new movies, older movies or even movies that haven't been shown yet! </b></p>
 
 
 <!-- hover images -->
@@ -211,7 +217,7 @@ function showSlides(n) {
 
 .image {
   display: block;
-  width: 100%;
+  width: 500px;
   height: auto;
   
 }
@@ -223,7 +229,7 @@ function showSlides(n) {
   left: 0;
   right: 0;
   height: 100%;
-  width: 100%;
+  width: 500px;
   opacity: 0;
   transition: .5s ease;
   background-color: #008CBA;
@@ -242,6 +248,9 @@ function showSlides(n) {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
+
+
 </style>
 </head>
 <body>
@@ -269,6 +278,11 @@ function showSlides(n) {
   </div>
 </div>
 
+<p>An ancient princess is awakened from her crypt beneath the desert,<br>
+ bringing with her malevolence grown over millennia, and terrors that<br>
+  defy human comprehension.
+</p>
+
 <div class="container">
   <img src="images/despicable.jpg" alt="Avatar" class="image">
   <div class="overlay">
@@ -276,12 +290,18 @@ function showSlides(n) {
   </div>
 </div>
 
+<p>Gru meets his twin brother Dru he never knew about.</p>
+
 <div class="container">
   <img src="images/spider.jpg" alt="Avatar" class="image">
   <div class="overlay">
     <div class="text">Release Date: July 5, 2017</div>
   </div>
 </div>
+
+<p>Following the events of Captain America: Civil War (2016),<br> 
+Peter Parker attempts to balance his life in high school with his<br>
+ career as the web-slinging superhero Spider-Man.
 
 </body>
 
