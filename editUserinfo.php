@@ -5,6 +5,9 @@
    define('DB_DATABASE', 'comp305_grp2');
 $con=mysql_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE) or die("Failed to connect to MySQL: " . mysql_error());
 $db=mysql_select_db(DB_DATABASE,$con) or die("Failed to connect to MySQL: " . mysql_error());
+echo $_POST['username'];
+$var_value = $_GET['user_id'];
+echo $var_value;
 function NewUser()
 {
 	$username = $_POST['username'];
@@ -12,14 +15,28 @@ function NewUser()
 	$first_name = $_POST['first_name'];
 	$last_name =  $_POST['last_name'];
 	$email = $_POST['email'];
-	$query = "INSERT INTO users (username,password,first_name,last_name,email) VALUES ('$username','$password','$first_name','$last_name', '$email')";
-	$data = mysql_query ($query)or die(mysql_error());
-	if($data)
-	{
-	echo "YOUR REGISTRATION IS COMPLETED...";
-	header("location:index.php");
-exit();
-
+	$admin = $_POST['admin'];
+	$user_id = $_POST['user_id'];
+	echo $user_id;
+	if($admin == 'y'){
+		$query = "update users set username = '$username',password = '$password',first_name= '$first_name',last_name= '$last_name',email = '$email',admin = '$admin' WHERE user_id = '$user_id'";
+		$data = mysql_query ($query)or die(mysql_error());
+		if($data)
+		{
+		echo "YOUR REGISTRATION IS COMPLETED...";
+		header("location:viewUsers.php");
+		exit();
+		}
+	}
+	else{
+		$query = "update users set username = '$username',password = '$password',first_name= '$first_name',last_name= '$last_name',email = '$email',admin = '$admin' WHERE user_id = '$user_id'";
+		$data = mysql_query ($query)or die(mysql_error());
+		if($data)
+		{
+		echo "YOUR REGISTRATION IS COMPLETED...";
+		header("location:viewUsers.php");
+		exit();
+		}
 	}
 }
 function SignUp()
@@ -42,4 +59,3 @@ if(isset($_POST['submit']))
 	SignUp();
 }
 ?>
-

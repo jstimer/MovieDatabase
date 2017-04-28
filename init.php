@@ -2,7 +2,7 @@
 session_start();
 require 'dbconnection.php';
 
-require 'users.php';
+require 'usersFun.php';
 
 $errors = array();
 ?>
