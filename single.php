@@ -50,7 +50,7 @@
     			echo "0 results";
 				}
 
-			
+			$SQL
 				
 				?>
 				
@@ -61,7 +61,7 @@
 			<script>
 				function deleteConfirmation() {
     					if (confirm("Delete this movie?") == true) {
-						
+							
     					} else {
         
     					}
@@ -83,17 +83,18 @@
 			</ul>
 			<p><strong> Plot: </strong><?php echo $film_summary; ?></p>
 			<p><?php echo "<center><iframe width=\"545\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe></center>";?></p></br>
-			<p><strong> Cast: </strong></p>
+			<p><strong> Main Cast: </strong></p>
 			<!-- Start of actor role code -->
 			<?php 
-			$SQLRole = "SELECT ActorListInMovie.roleName, ActorListInMovie.filmId, Film.filmID FROM ActorListInMovie, Film WHERE ActorListInMovie.filmId=Film.filmID and ActorListInMovie.filmId = $var_value;";
+			$SQLAct = "SELECT film_name, actorFirst, actorLast, role from ActorPlaysIn NATURAL JOIN Film WHERE filmID = $var_value;";
+			
+			$ActResult = $Connection->query($SQLAct);
 
-			$RoleResult = $Connection->query($SQLRole);
-
-			if ($RoleResult->num_rows > 0) {
+			if ($ActResult ->num_rows > 0) {
 				//echo $RoleResult->num_rows . "</br>";
-			while($row = $RoleResult->fetch_assoc()) {
-    				echo $row["roleName"] . "</br>";
+			while($row = $ActResult->fetch_assoc()) {
+    				
+    				echo $row["actorFirst"]." ". $row["actorLast"]." as ".$row["role"] ."</br>";
 			}
 			} else {
 				echo "No actor roles submitted.";
