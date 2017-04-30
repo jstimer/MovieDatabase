@@ -42,7 +42,7 @@ session_start();
 		  	<!-- Edit Modal content -->
 			<div class="modal-content">
 		  	<div class="modal-header">
-		    	<span class="close" style="cursor:pointer">&times;</span>
+		    	<span class="logclose" style="cursor:pointer">&times;</span>
 		    	<h2>Log In</h2>
 			
 	
@@ -52,14 +52,14 @@ session_start();
 			<form action="login.php" method="post">
 				<ul id="login">
 					<br>
-						Username: <br>
-						<input type="text" name ="username"><br><br>
+			Username: <br>
+			<input type="text" name ="username"><br><br>
 					
-						Password: <br>
-						<input type="password" name ="password"><br><br>
+			Password: <br>
+			<input type="password" name ="password"><br><br>
 					
-						<input type="submit" value="Log In"><br><br>
-						<a href="register.php">Register</a>
+			<input type="submit" value="Log In"><br><br>
+			<a href="register.php">Register</a>
 					
 			</form>
 
@@ -78,7 +78,7 @@ session_start();
 				 var logbtn = document.getElementById("loginBtn");
 
 				 // Get the <span> element that closes the modal
-				 var logspan = document.getElementsByClassName("close")[0];
+				 var logspan = document.getElementsByClassName("logclose")[0];
 
 				 // When the user clicks on the button, open the modal
 				 logbtn.onclick = function() {
@@ -92,22 +92,22 @@ session_start();
 				}
 
 				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-			    		if (event.target == modal) {
+				logmodal.onclick = function(logevent) {
+			    		if (logevent.target == logmodal) {
 			       			logmodal.style.display = "none";
 			    		}
 				}
 				</script>
 			
 
-		<button id="regBtn" style="float: left";>Register</button><br><br>
+			<button id="regBtn" style="float: left";>Register</button><br><br>
 			
 			<div id="regModal" class="modal">
 
 		  	<!-- Edit Modal content -->
 			<div class="modal-content">
 		  	<div class="modal-header">
-		    	<span class="close" style="cursor:pointer">&times;</span>
+		    	<span class="regclose" style="cursor:pointer">&times;</span>
 		    	<h2>Register</h2>
 		  	</div>
 		  	<div class="modal-body">			
@@ -145,7 +145,7 @@ session_start();
 	 var regbtn = document.getElementById("regBtn");
 
 	 // Get the <span> element that closes the modal
-	 var regspan = document.getElementsByClassName("close")[0];
+	 var regspan = document.getElementsByClassName("regclose")[0];
 
 	 // When the user clicks on the button, open the modal
 	 regbtn.onclick = function() {
@@ -159,8 +159,8 @@ session_start();
 	}
 
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function() {
-    		if (event.target == modal) {
+	regmodal.onclick = function(regevent) {
+    		if (regevent.target == regmodal) {
        			regmodal.style.display = "none";
     		}
 	}
