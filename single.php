@@ -47,8 +47,14 @@
     				
     			}
 				} else {
-    			echo "0 results";
+    			echo "No movie data sumbitted.";
 				}
+			
+			$SQLGenre = "SELECT Genre.catid, Genre.catName, Film.filmID, Film.genre FROM Genre, Film WHERE Genre.catid = Film.genre AND Film.filmID = $var_value;";
+
+			$genreResult = $Connection->query($SQLGenre);
+
+			
 			
 				?>
 				
@@ -65,11 +71,11 @@
     			<h2>Delete Movie</h2>
   			</div>
   			<div class="modal-body">
-    			<form action="movie_delete.php" method="POST">
+    			<!-- <form action="movie_delete.php" method="POST"> -->
     			<br>
-    			Are you sure you want to delete this movie from the Database?
+    			(In progress)
     			<br><br>
-    			<input type="submit" name="submit" value="Confirm">	
+    			<!-- <input type="submit" name="submit" value="Confirm">-->
     			</form>
   			</div>
 			</div>
@@ -116,11 +122,22 @@
 				</li>
 				<li><strong>Length: <?php echo $runningTime . " min"; ?></strong></li>
 				<li><strong>Release Date: <?php echo $film_release; ?></strong></li>
+				<li><strong>Genre: 
+				<?php if ($genreResult->num_rows > 0) {
+    				while($row = $genreResult->fetch_assoc()) {
+    					$genre = $row["catName"];
+    				}
+				} else {
+    					//echo "N/A";
+				}echo $genre; ?></strong></li>
+
 			</ul>
 			<p><strong> Plot: </strong><?php echo $film_summary; ?></p>
 			<p><?php echo "<center><iframe width=\"545\" height=\"315\" src=\"https://www.youtube.com/embed/$embedCode\" frameborder=\"0\" allowfullscreen></iframe></center>";?></p></br>
-			<p><strong> Main Cast: </strong></p>
 			<!-- Start of actor role code -->
+
+			<p><strong> Main Cast: </strong></p>
+
 			<?php 
 			$SQLAct = "SELECT film_name, actorFirst, actorLast, role from ActorPlaysIn NATURAL JOIN Film WHERE filmID = $var_value;";
 			
@@ -140,29 +157,6 @@
 			
 			<?php HTMLFooter(); ?>
 
-			<!--
-			<ul>
-			<?php
-				$sql = "SELECT director_name FROM table_name";  //change table/attribute names accordingly
-				$result = $conn->query($sql);
-		
-				if ($result->num_rows > 0) {
-					//output the data of each row
-					echo "Directors: ";
-					while($row = $result->fetch_assoc()) {
-						echo $row["director_name"] . ", ";
-					}
-				} else {
-					echo " Directors: No data found";
-				}
-				
-			?>
-				<li><strong>Directors:</strong> Director names</li>
-				<li><strong>Writers:</strong> Writer names</li>
-				<li><strong>Stars:</strong> Actor names</li>
-			</ul>
-		
-			-->
 		
 		<?php	
 			// close the connection
