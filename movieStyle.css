@@ -4,7 +4,7 @@
 html
 {
 	background-color:#606060 ;
-	background-image: url("images/film_Roll_background.jpg"),  url("images/film_Roll_background.jpg");
+	background-image: url('film_Roll_background.jpg'),  url('film_Roll_background.jpg');
 	background-repeat: repeat-y;
   	background-position: left center, right center;
 }
@@ -89,7 +89,7 @@ ul.menu li a.active {
 
 body
 {	background: #404040;
-	background-image: url("images/film_Roll_background.jpg"),  url("images/film_Roll_background.jpg");
+	background-image: url('film_Roll_background.jpg'),  url('film_Roll_background.jpg');
 	background-repeat: repeat-y;
   	background-position: left center, right center;
 	margin: 0px 40px 0px 40px;

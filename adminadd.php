@@ -12,14 +12,26 @@ function NewUser()
 	$first_name = $_POST['first_name'];
 	$last_name =  $_POST['last_name'];
 	$email = $_POST['email'];
-	$query = "INSERT INTO users (username,password,first_name,last_name,email) VALUES ('$username','$password','$first_name','$last_name', '$email')";
-	$data = mysql_query ($query)or die(mysql_error());
-	if($data)
-	{
-	echo "YOUR REGISTRATION IS COMPLETED...";
-	header("location:index.php");
-exit();
-
+	$admin = $_POST['admin'];
+	if($admin == 'y'){
+		$query = "INSERT INTO users (username,password,first_name,last_name,email,admin) VALUES ('$username','$password','$first_name','$last_name', '$email', '$admin')";
+		$data = mysql_query ($query)or die(mysql_error());
+		if($data)
+		{
+		echo "YOUR REGISTRATION IS COMPLETED...";
+		header("location:viewUsers.php");
+		exit();
+		}
+	}
+	else{
+		$query = "INSERT INTO users (username,password,first_name,last_name,email) VALUES ('$username','$password','$first_name','$last_name', '$email')";
+		$data = mysql_query ($query)or die(mysql_error());
+		if($data)
+		{
+		echo "YOUR REGISTRATION IS COMPLETED...";
+		header("location:viewUsers.php");
+		exit();
+		}
 	}
 }
 function SignUp()
@@ -42,4 +54,5 @@ if(isset($_POST['submit']))
 	SignUp();
 }
 ?>
+
 
