@@ -35,9 +35,9 @@ session_start();
 		
 ?>
 		
-		<button id="myBtn" style="float: left";>Log In</button><br><br>
+		<button id="loginBtn" style="float: left";>Log In</button>
 			
-			<div id="myModal" class="modal">
+			<div id="loginModal" class="modal">
 
 		  	<!-- Edit Modal content -->
 			<div class="modal-content">
@@ -63,40 +63,115 @@ session_start();
 					
 			</form>
 
+
 		  	</div>
 			</div>
 			</div>
 
 			
-<!-- javascript for the "add movie" modal -->
+<!-- javascript for the "login" modal -->
 				 <script>
 				 // Get the modal
-				 var modal = document.getElementById('myModal');
+				 var logmodal = document.getElementById('loginModal');
 
 				 // Get the button that opens the modal
-				 var btn = document.getElementById("myBtn");
+				 var logbtn = document.getElementById("loginBtn");
 
 				 // Get the <span> element that closes the modal
-				 var span = document.getElementsByClassName("close")[0];
+				 var logspan = document.getElementsByClassName("close")[0];
 
 				 // When the user clicks on the button, open the modal
-				 btn.onclick = function() {
-			    	 	modal.style.display = "block";
+				 logbtn.onclick = function() {
+			    	 	logmodal.style.display = "block";
+					//var modID = $(this).attr('loginModal');
 				 }
 
 				// When the user clicks on <span> (x), close the modal
-				span.onclick = function() {
-			   		modal.style.display = "none";
+				logspan.onclick = function() {
+			   		logmodal.style.display = "none";
 				}
 
 				// When the user clicks anywhere outside of the modal, close it
 				window.onclick = function(event) {
 			    		if (event.target == modal) {
-			       			modal.style.display = "none";
+			       			logmodal.style.display = "none";
 			    		}
 				}
 				</script>
 			
+
+		<button id="regBtn" style="float: left";>Register</button><br><br>
+			
+			<div id="regModal" class="modal">
+
+		  	<!-- Edit Modal content -->
+			<div class="modal-content">
+		  	<div class="modal-header">
+		    	<span class="close" style="cursor:pointer">&times;</span>
+		    	<h2>Register</h2>
+		  	</div>
+		  	<div class="modal-body">			
+
+		
+			<form method="POST" action="connectSignup.php">
+			<td>FirstName</td><br><td> <input type="text" name="first_name"></td>
+			</tr><br><br>
+			<tr>
+			<td>LastName</td><br><td> <input type="text" name="last_name"></td>
+			</tr><br><br>
+			<tr>
+			<td>Email</td><br><td> <input type="text" name="email"></td>
+			</tr><br><br>
+			<tr>
+			<td>UserName</td><br><td> <input type="text" name="username"></td>
+			</tr><br><br>
+			<tr>
+			<td>Password</td><br><td> <input type="password" name="password"></td>
+			</tr><br><br>
+			<tr>
+			<td><input id="button" type="submit" name="submit" value="Sign-Up"></td>
+			</tr><br><br>
+			</form>
+  		</div>
+		</div>
+	</div>
+
+	<!-- javascript for the "register" modal -->
+	 <script>
+	 // Get the modal
+	 var regmodal = document.getElementById('regModal');
+
+	 // Get the button that opens the modal
+	 var regbtn = document.getElementById("regBtn");
+
+	 // Get the <span> element that closes the modal
+	 var regspan = document.getElementsByClassName("close")[0];
+
+	 // When the user clicks on the button, open the modal
+	 regbtn.onclick = function() {
+    	 	regmodal.style.display = "block";
+		//var modID = $(this).attr('regModal');
+	 }
+
+	// When the user clicks on <span> (x), close the modal
+	regspan.onclick = function() {
+   		regmodal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function() {
+    		if (event.target == modal) {
+       			regmodal.style.display = "none";
+    		}
+	}
+	</script>
+
+
+
+
+
+
+
 		 
 <?php	
 		}
@@ -120,7 +195,7 @@ session_start();
 		
 		echo "<li><a href=\"contact_us.php\">Contact Us</a></li>\n";
 		
-		echo "<li><a href=\"register.php\">Register</a></li>\n";
+		//echo "<li><a href=\"register.php\">Register</a></li>\n";
 		
 		if($_SESSION["admin"] == 'y'){
 		echo "<li><a href=\"admin.php\">Admin</a></li>\n";		
